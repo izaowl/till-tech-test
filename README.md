@@ -3,7 +3,11 @@
 ```
 As a customer of cafe 
 So that I can track my spending
-I want to be able to have receipt ith items I purchased and their prices
+I want to be able to have receipt with cafe's name and address
+
+As a customer of cafe 
+So that I can track my spending
+I want to be able to have receipt with items I purchased and their prices
 
 As a customer of cafe 
 So that I can track my spending
