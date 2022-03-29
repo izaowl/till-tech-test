@@ -52,11 +52,31 @@ class Receipt{
    }
 
    calculateTax(total, tax){
-       let afterTax = (total*tax)/100
-       return afterTax + total
+       let afterTax = (total*tax)/100 + total;
+       let tot = afterTax.toFixed(2)
+       return tot
    }
 }
  
 module.exports = Receipt
-// const r = new Receipt;
-// r.print();
+
+const receipt = new Receipt;
+const item = 'Cafe Latte';
+const quantity = 2;
+let totalPrice = receipt.calculateItemTotal(item, quantity); 
+let tax = 8.64;
+let totalAfterTax = receipt.calculateTax(totalPrice,tax);
+console.log(totalAfterTax)
+const item2 = 'Blueberry Muffin';
+const quantity2 = 1;
+let totalPrice2 = receipt.calculateItemTotal(item2, quantity2); 
+let totalAfterTax2 = receipt.calculateTax(totalPrice2,tax);
+console.log(totalAfterTax2)
+const item3 = 'Choc Mudcake';
+const quantity3 = 1;
+let totalPrice3 = receipt.calculateItemTotal(item3, quantity3); 
+let totalAfterTax3 = receipt.calculateTax(totalPrice3,tax);
+console.log(totalAfterTax3)
+let totalAmount =0; 
+totalAmount = totalAfterTax + totalAfterTax2 + totalAfterTax3
+console.log(totalAfterTax + totalAfterTax2 + totalAfterTax3);

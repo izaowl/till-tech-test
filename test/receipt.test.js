@@ -29,12 +29,34 @@ describe("Receipt",() =>{
     it("calculates tax",() =>{
       const receipt = new Receipt;
       const item = 'Cafe Latte';
-      const quantity = 100;
+      const quantity = 1;
       const totalPrice = receipt.calculateItemTotal(item, quantity); 
       const tax = 8.64;
       const totalAfterTax = receipt.calculateTax(totalPrice,tax);
-      expect(totalAfterTax).toBe(516.04)
+      expect(totalAfterTax).toBe("5.16")
     });
+
+    it("Calculates total amount",()=>{
+      const receipt = new Receipt;
+      const item = 'Cafe Latte';
+      const quantity = 2;
+      const totalPrice = receipt.calculateItemTotal(item, quantity); 
+      const tax = 8.64;
+      const totalAfterTax = receipt.calculateTax(totalPrice,tax);
+
+      const item2 = 'Blueberry Muffin';
+      const quantity2 = 1;
+      const totalPrice2 = receipt.calculateItemTotal(item2, quantity2); 
+      const totalAfterTax2 = receipt.calculateTax(totalPrice2,tax);
+
+      const item3 = 'Choc Mudcake';
+      const quantity3 = 1;
+      const totalPrice3 = receipt.calculateItemTotal(item3, quantity3); 
+      const totalAfterTax3 = receipt.calculateTax(totalPrice3,tax);
+
+      const totalAmount = totalAfterTax + totalAfterTax2 + totalAfterTax3
+      expect(totalAmount).toBe(21.67)
+    })
 });
 
 
